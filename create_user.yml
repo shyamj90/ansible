@@ -1,0 +1,10 @@
+---
+- name: Create dev user 
+  hosts: web
+  become: yes
+  tasks:
+    - name: create user
+      ansible.builtin.user:
+        name: "developer"
+        shell: "/bin/bash"
+        state: present
